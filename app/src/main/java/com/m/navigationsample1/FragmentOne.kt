@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_one.*
@@ -29,6 +30,14 @@ class FragmentOne : Fragment() {
                 direction.id = 113
                 Navigation.findNavController(btn_fragment_two_argument).navigate(direction)
             }
+
+            btn_fragment_two_depplink?.setOnClickListener {
+                val name :String = "sam"
+                val id : Int = 123
+                val deeplink_uri = "http://mysitesampleapp.com/$name/$id".toUri()
+                Navigation.findNavController(btn_fragment_two_argument).navigate(deeplink_uri)
+            }
+
         }
 
     }

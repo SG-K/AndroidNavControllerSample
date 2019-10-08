@@ -23,10 +23,11 @@
         <argument android:name="name"
                   app:argType="string"
                   app:nullable="true"
-        android:defaultValue="Default"/>
+                  android:defaultValue="Default"/>
         <argument android:name="id"
                   app:argType="integer"
                   android:defaultValue="-1"/>
+        <deepLink app:uri="http://mysitesampleapp.com/{name}/{id}"/>
     </fragment>
 
 </navigation>
